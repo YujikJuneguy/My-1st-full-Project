@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+.navhead {
+    background-color: rgb(22, 20, 20);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    padding: 15px 25px;
+    font-size: larger;
+}
+nav a {
+    color: orangered;
+    text-decoration: none;
+    font-size: larger;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+nav div:last-child a {
+    margin-left: 40px;
+}
+
+.container a:hover {
+    background-color: black;
+    color: orangered;
+    border: 1px solid orangered;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.nav-bar {
+     background-color: rgb(44, 43, 43);
+    padding: 0px 10px;
+    margin: 0px auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: medium;
+}
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    margin: auto;
+    padding-right: 30px;
+}
+.nav-bar a:hover {
+    color: orangered;
+}
+
+/* _______________________________________products style ___________________________________________*/
+.products {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 8px;
+    position: relative;
+       } 
+.about_good {
+    position: absolute;
+    inset: 0;
+    /* background-color: green; */
+    z-index: 1;
+}
+.guitars {
+    display: grid;
+    border: 2px solid grey;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 8px;
+}       
+.products .guitars img {
+    width: 100%;
+    height: 300px;
+    border: 3px solid orange ;
+    border-radius: 10px;
+    object-fit: cover;
+    padding: 0%;
+}
+.products h2 {
+    margin-right: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.btn {
+    background-color: rgb(10, 142, 10);
+    color: white;
+    padding: 3%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* box-shadow: inset; */
+    border-radius: 6px;
+    }
