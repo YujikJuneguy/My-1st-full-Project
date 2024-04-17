@@ -1,0 +1,43 @@
+{
+    "products": [
+      {
+        "id": 111,
+        "brand":"Ibanez AEWC400 6-String Acoustic-Electric Guitar (Right-Handed, Transparent Black Sunburst)",
+        "Rating": "4.5",
+        "price": "599.99$",
+        "status": "in Stock",
+        "image":"https://m.media-amazon.com/images/I/61zvSMUmxeL._AC_SL1200_.jpg"
+    },
+    {
+        "id": 112,
+        "brand":"Taylor T5z Custom Koa Hollowbody Electric Guitar - Shaded Edge Burst",
+        "Rating": "4.5",
+        "price": "3799$",
+        "status": "in Stock",
+        "image":"https://media.sweetwater.com/api/i/q-82__h-750__f-webp__ha-4e9ec65a0b0074ef__hmac-6d4c5cb7994683e7d09bcc6edbc2fd3dfee243ad/images/guitars/T5ZCustSEB/1211083101/1211083101-body-large.jpg.auto.webp"
+    },
+    {
+        "id": 113,
+        "brand":"Ibanez TOD10N Tim Henson Signature Nylon Acoustic-electric Guitar - Black",
+        "Rating": "5",
+        "price": "699$",
+        "status": "in Stock",
+        "image":"https://media.sweetwater.com/m/products/image/62604ad2f7XIDSH87a5so4FxP8W1ue0mBkTJowSm.png?quality=82&height=750&ha=62604ad2f73d096f"
+    },
+    {
+        "id": 114,
+        "brand":"Cordoba Stage Thinbody Nylon Acoustic-electric Guitar - Edgeburst",
+        "Rating": "3.5",
+        "price": "749$",
+        "status": "in Stock",
+        "image":"https://media.sweetwater.com/api/i/q-82__h-750__f-webp__ha-4e9ec65a0b0074ef__hmac-6d4c5cb7994683e7d09bcc6edbc2fd3dfee243ad/images/guitars/T5ZCustSEB/1211083101/1211083101-body-large.jpg.auto.webp"
+    },
+    {
+        "id": 115,
+        "brand":"Ibanez FRH10NIBF Thinline Nylon Acoustic-electric Guitar - Indigo Blue Metallic Flat",
+        "Rating": "4.5",
+        "price": "499$",
+        "status": "in Stock",
+        "image":"https://media.sweetwater.com/m/products/image/bd241dcb40h6jd80SSxwggSuDijXYnUAvEYJqdI5.png?quality=82&height=750&ha=bd241dcb40e07885"
+    }
+    ]}
