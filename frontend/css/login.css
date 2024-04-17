@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 .navhead {
     background-color: rgb(22, 20, 20);
@@ -25,15 +24,6 @@ nav a {
 nav div:last-child a {
     margin-left: 40px;
 }
-
-.container a:hover {
-    background-color: black;
-    color: orangered;
-    border: 1px solid orangered;
-    padding: 6px;
-    border-radius: 10px;
-}
-
 .nav-bar {
      background-color: rgb(44, 43, 43);
     padding: 0px 10px;
@@ -64,7 +54,6 @@ nav div:last-child a {
 .about_good {
     position: absolute;
     inset: 0;
-    /* background-color: green; */
     z-index: 1;
 }
 .guitars {
@@ -91,6 +80,5 @@ nav div:last-child a {
     color: white;
     padding: 3%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* box-shadow: inset; */
     border-radius: 6px;
     }

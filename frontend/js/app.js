@@ -1,8 +1,21 @@
-const url = 'http://localhost:3000/products/';
+const url = 'http://localhost:3000/';
 const productContainer = document.querySelector('.products')
-const register = document.querySelector('register')
-const login = document.querySelector('login')
+const register = document.querySelector('.register')
+const login = document.getElementById('login')
 const navmenu =document.getElementById('navmenu')
+
+const user ="";
+const checkUser = () => {
+  if (user) {
+  navmenu.innerHTML = `<a class="new" href="newItem.html">Add your Item</a>
+                       <a class="fav" href="">Favorites</a>
+                       <a class="logout" href="./index.html">Log out</a>`;
+}else {
+  navmenu.innerHTML = `<a class="register" href="./register.html">Sign Up</a>
+                       <a id="login" href="#">Log in</a>`
+}
+}
+
 
 const writeData = (data) => {
     data.forEach(({id,brand,price,status,image}) => {
@@ -19,10 +32,39 @@ const writeData = (data) => {
 };
 
 const getAwaitAxios = async() => {
-  const {data} = await axios (url)
+  const {data} = await axios (url + 'products')
   writeData(data);
 };
 getAwaitAxios()
+
+/* Login Sweetalert*/ 
+
+login.addEventListener("click", async() => {
+  const {value:formValues} = await Swal.fire({
+    title: "Type your credentials", 
+    html: `
+      <input id="swal-input1" class="swal2-input">
+      <input id="swal-input2" class="swal2-input">
+    `,
+    focusConfirm: false,
+    preConfirm: async () => {
+      const _username = document.getElementById("swal-input1").value
+      const _password = document.getElementById("swal-input1").value;
+      const {data} = await axios (url + 'users')
+      const currentUser = data.find((user) => {
+        if(user.username === _username && user.password === password){
+          return user
+        }
+      });
+      if(!currentUser) {
+        user === true;
+        checkUser();
+      }else {
+        alert('bele bir istifadeci yoxdur')
+      }
+    }
+  });
+})
 
 /*--------------------------------deleteItem----------------------------------*/ 
 
