@@ -41,9 +41,9 @@ getAwaitAxios()
 
 /* _____________________________________ Login Sweetalert, v' istifadecinin olun olmamas; haqda _________________*/ 
 
-const register = document.querySelector('.register')
-const login = document.getElementById('login')
-login.addEventListener("click", async() => {
+const loginBtn = document.getElementById('login')
+const registerBtn = document.querySelector('.register')
+loginBtn.addEventListener("click", async() => {
   const {value:formValues} = await Swal.fire({
     title: "Type your credentials", 
     html: `
@@ -51,26 +51,32 @@ login.addEventListener("click", async() => {
       <input id="password" class="swal2-input" placeholder = "password" type ="password">
     `,
     focusConfirm: false,
-    preConfirm: async () => {
-      const _username = document.getElementById("username").value
-      const _password = document.getElementById("password").value;
-      const {data} = await axios (url + 'users')
-      const currentUser = data.find((user) => {
-        if(user.username === _username && user.password === _password){
-          return curr
+    preConfirm: () => {
+    return [
+        document.getElementById("username").value,
+        document.getElementById("password").value,
+      ];
+    },
+  });
+  if (formValues) {
+    // console.log(formValues);
+    const _username = formValues[0];
+    const _password = formValues[1]
+    const {data} = await axios (url + 'users')
+    const currentUser = data.find((user) => {
+       if(user.username === _username && user.password === _password){
+          return user
         }
-      });
-      if(!currentUser) {
-        user === true;
+      }); 
+      if(currentUser) {
+        user = true;
         checkUser();
       }else {
-        alert('bele bir istifadeci yoxdur')
+        Swal.fire('bele bir istifadeci yoxdur')
       }
-    }
-  });
-})
 
-//   *************** lesson 40  50 minuta
+  }
+});
 
 // /*--------------------------------deleteItem----------------------------------*/ 
 
