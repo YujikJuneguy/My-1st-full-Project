@@ -41,42 +41,53 @@ getAwaitAxios()
 
 /* _____________________________________ Login Sweetalert, v' istifadecinin olun olmamas; haqda _________________*/ 
 
-const loginBtn = document.getElementById('login')
-const registerBtn = document.querySelector('.register')
-loginBtn.addEventListener("click", async() => {
-  const {value:formValues} = await Swal.fire({
-    title: "Type your credentials", 
-    html: `
-      <input id="username" class="swal2-input" placeholder = "username">
-      <input id="password" class="swal2-input" placeholder = "password" type ="password">
-    `,
-    focusConfirm: false,
-    preConfirm: () => {
-    return [
-        document.getElementById("username").value,
-        document.getElementById("password").value,
-      ];
-    },
-  });
-  if (formValues) {
-    // console.log(formValues);
-    const _username = formValues[0];
-    const _password = formValues[1]
-    const {data} = await axios (url + 'users')
-    const currentUser = data.find((user) => {
-       if(user.username === _username && user.password === _password){
-          return user
-        }
-      }); 
-      if(currentUser) {
-        user = true;
-        checkUser();
-      }else {
-        Swal.fire('bele bir istifadeci yoxdur')
-      }
+if (!user) {
+  const loginBtn = document.getElementById("loginBtn");
+  loginBtn.addEventListener("click", async () => {
+    const { value: formValues } = await Swal.fire({
+      title: "Daxil ol",
+      html: `
+          <input id="username" class="swal2-input" placeholder="username" type="text">
+          <input id="password" class="swal2-input" placeholder="password" type="password">
+        `,
+      focusConfirm: false,
+      preConfirm: () => {
+        return [
+          document.getElementById("username").value,
+          document.getElementById("password").value,
+        ];
+      },
+    });
+    if (formValues) {
+      const _username = formValues[0];
+      const _password = formValues[1];
 
-  }
-});
+      const { data } = await axios(url + "users");
+      const currentUser = data.find((user) => {
+        if (user.username === _username && user.password === _password) {
+          return user;
+        }
+      });
+      if (currentUser) {
+        localStorage.setItem("user", currentUser.username);
+        console.log(currentUser);
+        checkUser();
+        location.reload();
+      } else {
+        Swal.fire("istifadeci adi ve ya sifre yalnisdir");
+      }
+    }
+  });
+} else {
+  const logOutButton = document.getElementById("logOutButton");
+  logOutButton.addEventListener("click", () => {
+    localStorage.setItem("user", false);
+    localStorage.removeItem("user");
+    user = localStorage.getItem("user") || false;
+    location.reload();
+    checkUser();
+  });
+}
 
 // /*--------------------------------deleteItem----------------------------------*/ 
 
